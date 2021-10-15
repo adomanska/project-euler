@@ -1,0 +1,28 @@
+{
+  "name": "project-euler",
+  "version": "1.0.0",
+  "description": "Solutions for Project Euler problems",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andzelika-domanska/project-euler.git"
+  },
+  "keywords": [
+    "algorithms",
+    "project",
+    "euler"
+  ],
+  "author": "Andzelika Domanska",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andzelika-domanska/project-euler/issues"
+  },
+  "homepage": "https://github.com/andzelika-domanska/project-euler#readme",
+  "dependencies": {
+    "commander": "^8.2.0"
+  }
+}
