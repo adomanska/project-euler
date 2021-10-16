@@ -1,0 +1,36 @@
+{
+  "name": "project-euler",
+  "version": "1.0.0",
+  "description": "Solutions for Project Euler problems",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "./node_modules/.bin/eslint src --ext .js,.jsx",
+    "lint:fix": "./node_modules/.bin/eslint src --ext .js,.jsx --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andzelika-domanska/project-euler.git"
+  },
+  "keywords": [
+    "algorithms",
+    "project",
+    "euler"
+  ],
+  "author": "Andzelika Domanska",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andzelika-domanska/project-euler/issues"
+  },
+  "homepage": "https://github.com/andzelika-domanska/project-euler#readme",
+  "dependencies": {
+    "commander": "8.2.0"
+  },
+  "devDependencies": {
+    "eslint": "7.32.0",
+    "eslint-config-airbnb-base": "14.2.1",
+    "eslint-plugin-import": "2.25.2"
+  }
+}
