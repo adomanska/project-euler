@@ -5,10 +5,11 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node ./src/index.js",
+    "start": "./node_modules/.bin/ts-node ./src/index.ts",
     "test": "jest",
-    "lint": "./node_modules/.bin/eslint src --ext .js,.jsx",
-    "lint:fix": "./node_modules/.bin/eslint src --ext .js,.jsx --fix"
+    "build": "tsc",
+    "lint": "./node_modules/.bin/eslint ./src",
+    "lint:fix": "./node_modules/.bin/eslint ./src --fix"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
   },
   "devDependencies": {
     "@types/jest": "^27.0.2",
+    "@types/node": "^16.11.1",
     "@typescript-eslint/eslint-plugin": "5.0.0",
     "@typescript-eslint/parser": "5.0.0",
     "eslint": "7.32.0",
@@ -37,6 +39,7 @@
     "eslint-plugin-import": "2.25.2",
     "jest": "^27.3.0",
     "ts-jest": "^27.0.7",
+    "ts-node": "^10.3.0",
     "typescript": "^4.4.4"
   }
 }
