@@ -1,6 +1,8 @@
-import * as maximumPathSum from './maximum-path-sum/index.js';
+import * as maximumPathSum from './maximum-path-sum';
 
-const config: Record<string, any> = {
+type Solver = (rawData: string[]) => string;
+
+const config: Record<string, Solver> = {
   'maximum-path-sum': maximumPathSum.default,
 };
 
