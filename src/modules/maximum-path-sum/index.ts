@@ -1,12 +1,12 @@
-export const parseData = (rawData) => rawData
+export const parseData = (rawData: string[]) => rawData
   .map((row) => row.split(' ').map((value) => Number(value)));
 
-export const solve = (data) => data
+export const solve = (data: number[][]) => data
   .reverse()
   .reduce(
     (acc, current) => current.map((value, index) => value + Math.max(acc[index], acc[index + 1])),
   )[0];
 
-const solveProblem = (rawData) => solve(parseData(rawData)).toString();
+const solveProblem = (rawData: string[]) => solve(parseData(rawData)).toString();
 
 export default solveProblem;

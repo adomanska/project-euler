@@ -1,8 +1,8 @@
 import { Command } from 'commander';
-import * as modulesConfig from './modules/index.js';
-import readLines from './utils/read-lines.js';
+import * as modulesConfig from './modules';
+import readLines from './utils/read-lines';
 
-const fetchSolution = (problemId, dataPath) => {
+const fetchSolution = (problemId: string, dataPath: string) => {
   const solve = modulesConfig.default[problemId];
   const rawData = readLines(dataPath);
 

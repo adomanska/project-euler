@@ -1,6 +1,6 @@
 import * as maximumPathSum from './maximum-path-sum/index.js';
 
-const config = {
+const config: Record<string, any> = {
   'maximum-path-sum': maximumPathSum.default,
 };
 
