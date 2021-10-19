@@ -6,9 +6,9 @@
   "type": "module",
   "scripts": {
     "start": "node ./src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "./node_modules/.bin/eslint src --ext .js,.jsx",
-    "lint:fix": "./node_modules/.bin/eslint src --ext .js,.jsx --fix"
+    "test": "jest",
+    "lint": "./node_modules/.bin/eslint ./src",
+    "lint:fix": "./node_modules/.bin/eslint ./src --fix"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
   "devDependencies": {
     "eslint": "7.32.0",
     "eslint-config-airbnb-base": "14.2.1",
-    "eslint-plugin-import": "2.25.2"
+    "eslint-plugin-import": "^2.25.2",
+    "jest": "27.3.0"
   }
 }
