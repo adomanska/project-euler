@@ -1,4 +1,4 @@
-import { parseData, solve } from '..';
+import { multiply, parseData, solve } from '..';
 
 describe('parseData', () => {
   it('should parse input number', () => {
@@ -7,6 +7,26 @@ describe('parseData', () => {
     const data = parseData(rawData);
 
     expect(data).toEqual(10);
+  });
+});
+
+describe('multiply', () => {
+  it('should retur correct result for one-digit multiplier', () => {
+    const value = [1, 2, 3];
+    const multiplier = 9;
+
+    const result = multiply(value, multiplier);
+
+    expect(result).toEqual([1, 1, 0, 7]);
+  });
+
+  it('should retur correct result for two-digit multiplier', () => {
+    const value = [1, 2, 3];
+    const multiplier = 89;
+
+    const result = multiply(value, multiplier);
+
+    expect(result).toEqual([1, 0, 9, 4, 7]);
   });
 });
 
