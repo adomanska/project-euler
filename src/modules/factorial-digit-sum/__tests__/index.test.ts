@@ -13,7 +13,7 @@ describe('parseData', () => {
 });
 
 describe('multiply', () => {
-  it('should retur correct result for one-digit multiplier', () => {
+  it('should return correct result for one-digit multiplier', () => {
     const value = [1, 2, 3];
     const multiplier = 9;
 
@@ -22,7 +22,7 @@ describe('multiply', () => {
     expect(result).toEqual([1, 1, 0, 7]);
   });
 
-  it('should retur correct result for two-digit multiplier', () => {
+  it('should return correct result for two-digit multiplier', () => {
     const value = [1, 2, 3];
     const multiplier = 89;
 

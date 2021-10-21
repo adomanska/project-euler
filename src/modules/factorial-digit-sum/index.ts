@@ -33,7 +33,7 @@ export const factorial = (value: number) => {
 };
 
 export const solve = (data: number) => factorial(data)
-  .reduce((acc, digit) => acc + digit, 0);
+  .reduce((acc, digit) => acc + digit);
 
 const solveProblem = (rawData: string[]) => solve(parseData(rawData)).toString();
 
