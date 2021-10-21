@@ -2,10 +2,11 @@ import { getDividersSum } from '..';
 
 describe('getDividersSum', () => {
   it('should return correct sum of dividers for given number', () => {
-    const value = 284;
+    const max = 285;
 
-    const sumOfDividers = getDividersSum(value + 1).pop();
+    const dividersSum = getDividersSum(max);
 
-    expect(sumOfDividers).toEqual(220);
+    expect(dividersSum[220]).toEqual(284);
+    expect(dividersSum[284]).toEqual(220);
   });
 });
