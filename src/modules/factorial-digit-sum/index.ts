@@ -1,4 +1,4 @@
-export const parseData = (rawData: string[]) => Number(rawData[0]);
+import parseData from '../../common/parse-single-number';
 
 export const multiply = (value: number[], multiplier: number) => {
   const result = [];

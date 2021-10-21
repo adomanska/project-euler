@@ -1,16 +1,4 @@
-import {
-  factorial, multiply, parseData, solve,
-} from '..';
-
-describe('parseData', () => {
-  it('should parse input number', () => {
-    const rawData = ['10'];
-
-    const data = parseData(rawData);
-
-    expect(data).toEqual(10);
-  });
-});
+import { factorial, multiply, solve } from '..';
 
 describe('multiply', () => {
   it('should return correct result for one-digit multiplier', () => {
