@@ -8,21 +8,24 @@ export const multiply = (value: number[], multiplier: number) => {
     result.unshift(tmp % 10);
     return Math.floor(tmp / 10);
   }, 0);
-  const resDigits = res
-    .toString()
-    .split('')
-    .map((digit) => Number(digit));
-  result.unshift(...resDigits);
+
+  if (res !== 0) {
+    const resDigits = res
+      .toString()
+      .split('')
+      .map((digit) => Number(digit));
+    result.unshift(...resDigits);
+  }
 
   return result;
 };
 
-const factorial = (value: number) => {
-  let result = 1;
-  let multiplier = 1;
+export const factorial = (value: number) => {
+  let result = [1];
+  let multiplier = 2;
 
   while (multiplier <= value) {
-    result *= multiplier;
+    result = multiply(result, multiplier);
     multiplier += 1;
   }
 
@@ -30,9 +33,7 @@ const factorial = (value: number) => {
 };
 
 export const solve = (data: number) => factorial(data)
-  .toString()
-  .split('')
-  .reduce((acc, digit) => acc + Number(digit), 0);
+  .reduce((acc, digit) => acc + digit, 0);
 
 const solveProblem = (rawData: string[]) => solve(parseData(rawData)).toString();
 
