@@ -10,9 +10,8 @@ export const getAlphabeticalValue = (value: string) => value
   .reduce((acc, charValue) => acc + charValue);
 
 const solve = (data: string[]) => data
-  .map((name) => ({ name, value: getAlphabeticalValue(name) }))
-  .sort((firstName, secondName) => firstName.value - secondName.value)
-  .reduce((acc, name) => acc + name.value, 0);
+  .sort()
+  .reduce((acc, name, index) => acc + getAlphabeticalValue(name) * (index + 1), 0);
 
 const solveProblem = (rawData: string[]) => solve(parseData(rawData)).toString();
 
