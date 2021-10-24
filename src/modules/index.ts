@@ -3,6 +3,7 @@ import countingSundays from './counting-sundays';
 import factorialDigitSum from './factorial-digit-sum';
 import amicableNumbers from './amicable-numbers';
 import namesScores from './names-scores';
+import nonAbundantSums from './non-abundant-sums';
 
 type Solver = (rawData: string[]) => string;
 
@@ -12,6 +13,7 @@ const config: Record<string, Solver> = {
   'factorial-digit-sum': factorialDigitSum,
   'amicable-numbers': amicableNumbers,
   'names-scores': namesScores,
+  'non-abundant-sums': nonAbundantSums,
 };
 
 export default config;
