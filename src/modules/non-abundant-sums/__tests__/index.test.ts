@@ -11,7 +11,7 @@ describe('getAbundantNumbers', () => {
 });
 
 describe('solve', () => {
-  it('should return sum of non-abundant sums for gien max', () => {
+  it('should return sum of non-abundant sums for given max', () => {
     const max = 25;
 
     const result = solve(max);
