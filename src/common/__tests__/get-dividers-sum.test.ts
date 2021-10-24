@@ -1,4 +1,4 @@
-import { getDividersSum } from '..';
+import getDividersSum from '../get-dividers-sum';
 
 describe('getDividersSum', () => {
   it('should return correct sum of dividers for given number', () => {
