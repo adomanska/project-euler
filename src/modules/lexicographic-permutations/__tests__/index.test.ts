@@ -17,7 +17,7 @@ describe('parseData', () => {
 });
 
 describe('solve', () => {
-  it('should return element of lexicographic permuation at given index', () => {
+  it('should return element of lexicographic permutation at given index', () => {
     const data = {
       elements: ['0', '1', '2'],
       index: 4,
