@@ -1,7 +1,7 @@
 import { bigNumbersSum, solve } from '..';
 
 describe('bigNumbersSum', () => {
-  it('should return correct sum of numbers given in vectors of same length', () => {
+  it('should return correct sum of numbers given as vectors of same length', () => {
     const firstNumber = [4, 2, 2];
     const secondNumber = [6, 0, 9];
 
@@ -10,7 +10,7 @@ describe('bigNumbersSum', () => {
     expect(result).toEqual([1, 0, 3, 1]);
   });
 
-  it('should return correct sum of numbers given in vectors when second is longest', () => {
+  it('should return correct sum of numbers given as vectors when second is longer', () => {
     const firstNumber = [4, 2, 2];
     const secondNumber = [1, 6, 0, 9];
 
@@ -27,7 +27,7 @@ describe('solve', () => {
     [3, 12],
   ];
 
-  testCases.forEach(([digits, expected]) => it(`should return ${expected} for ${digits} digits`, () => {
+  testCases.forEach(([digits, expected]) => it(`should return ${expected} for ${digits} digit(s)`, () => {
     const result = solve(digits);
 
     expect(result).toEqual(expected);

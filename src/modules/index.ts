@@ -5,7 +5,7 @@ import amicableNumbers from './amicable-numbers';
 import namesScores from './names-scores';
 import nonAbundantSums from './non-abundant-sums';
 import lexicographicPermutations from './lexicographic-permutations';
-import nDigitFibonaciNumber from './n-digit-fibonacci-number';
+import nDigitFibonacciNumber from './n-digit-fibonacci-number';
 
 type Solver = (rawData: string[]) => string;
 
@@ -17,7 +17,7 @@ const config: Record<string, Solver> = {
   'names-scores': namesScores,
   'non-abundant-sums': nonAbundantSums,
   'lexicographic-permutations': lexicographicPermutations,
-  'n-digit-fibonacci-number': nDigitFibonaciNumber,
+  'n-digit-fibonacci-number': nDigitFibonacciNumber,
 };
 
 export default config;
