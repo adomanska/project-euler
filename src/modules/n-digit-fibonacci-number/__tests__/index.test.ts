@@ -1,4 +1,4 @@
-import { bigNumbersSum } from '..';
+import { bigNumbersSum, solve } from '..';
 
 describe('bigNumbersSum', () => {
   it('should return correct sum of numbers given in vectors of same length', () => {
@@ -18,4 +18,18 @@ describe('bigNumbersSum', () => {
 
     expect(result).toEqual([2, 0, 3, 1]);
   });
+});
+
+describe('solve', () => {
+  const testCases = [
+    [1, 1],
+    [2, 7],
+    [3, 12],
+  ];
+
+  testCases.forEach(([digits, expected]) => it(`should return ${expected} for ${digits} digits`, () => {
+    const result = solve(digits);
+
+    expect(result).toEqual(expected);
+  }));
 });

@@ -25,7 +25,25 @@ export const bigNumbersSum = (a: number[], b: number[]) => {
 };
 
 export const solve = (digits: number) => {
-  return digits;
+  if (digits === 1) {
+    return 1;
+  }
+
+  const previous = [
+    [1],
+    [1],
+  ];
+  let index = 2;
+
+  while (previous[1].length < digits) {
+    const result = bigNumbersSum(previous[0], previous[1]);
+    // eslint-disable-next-line prefer-destructuring
+    previous[0] = previous[1];
+    previous[1] = result;
+    index += 1;
+  }
+
+  return index;
 };
 
 const solveProblem = (rawData: string[]) => solve(parseData(rawData)).toString();
