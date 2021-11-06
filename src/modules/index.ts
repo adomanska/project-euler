@@ -6,6 +6,7 @@ import namesScores from './names-scores';
 import nonAbundantSums from './non-abundant-sums';
 import lexicographicPermutations from './lexicographic-permutations';
 import nDigitFibonacciNumber from './n-digit-fibonacci-number';
+import reciprocalCycle from './reciprocal-cycle';
 
 type Solver = (rawData: string[]) => string;
 
@@ -18,6 +19,7 @@ const config: Record<string, Solver> = {
   'non-abundant-sums': nonAbundantSums,
   'lexicographic-permutations': lexicographicPermutations,
   'n-digit-fibonacci-number': nDigitFibonacciNumber,
+  'reciprocal-cycle': reciprocalCycle,
 };
 
 export default config;
