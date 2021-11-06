@@ -23,7 +23,7 @@ export const solve = (max: number) => {
   let maxCycleId = 1;
   let maxCycleLength = 0;
 
-  for (let index = 2; index <= max; index += 1) {
+  for (let index = 2; index < max; index += 1) {
     const recurringCycle = getRecurringCycle(index);
     const cycleLength = !!recurringCycle && recurringCycle.length;
 
