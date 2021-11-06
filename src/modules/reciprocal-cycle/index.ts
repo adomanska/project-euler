@@ -2,56 +2,30 @@ import parseData from '../../common/parse-single-number';
 
 export const getRecurringCycle = (d: number) => {
   let reminder = 1 % d;
-  let res = '';
-  const remindersRes = new Map();
+  let result = '';
+  const remindersStart = new Map();
 
-  while (reminder !== 0 && !remindersRes.has(reminder)) {
-    remindersRes.set(reminder, res.length);
+  while (reminder !== 0 && !remindersStart.has(reminder)) {
+    remindersStart.set(reminder, result.length);
     reminder *= 10;
-    res += Math.floor(reminder / d);
+    result += Math.floor(reminder / d);
     reminder %= d;
   }
 
-  if (reminder === 0) {
-    return null;
-  }
-
-  if (remindersRes.has(reminder)) {
-    return Number(res.substr(remindersRes.get(reminder)));
+  if (reminder !== 0 && remindersStart.has(reminder)) {
+    return result.substr(remindersStart.get(reminder));
   }
 
   return null;
 };
 
-const getRecurringCycleForMultiple = (baseCycle: number | null, factor: number) => {
-  if (baseCycle === null) return null;
-
-  return null;
-};
-
-const solve = (max: number) => {
-  if (max <= 2) {
-    return 0;
-  }
-
-  const recurringCycles = new Array(max + 1);
-
-  let maxCycleId = 0;
+export const solve = (max: number) => {
+  let maxCycleId = 1;
   let maxCycleLength = 0;
 
   for (let index = 2; index <= max; index += 1) {
-    if (recurringCycles[index] === undefined) {
-      recurringCycles[index] = getRecurringCycle(index);
-
-      for (let factor = 2; factor * index <= max; factor += 1) {
-        recurringCycles[factor * index] = getRecurringCycleForMultiple(
-          recurringCycles[index],
-          factor,
-        );
-      }
-    }
-
-    const cycleLength = !!recurringCycles[index] && recurringCycles[index].toString().length;
+    const recurringCycle = getRecurringCycle(index);
+    const cycleLength = !!recurringCycle && recurringCycle.length;
 
     if (!!cycleLength && cycleLength > maxCycleLength) {
       maxCycleLength = cycleLength;
