@@ -1,10 +1,10 @@
-import { eratostenesSieve, solve } from '..';
+import { eratosthenesSieve, solve } from '..';
 
 describe('erathosthenesSieve', () => {
   it('should return primes lookup table for given limit', () => {
     const max = 10;
 
-    const result = eratostenesSieve(max);
+    const result = eratosthenesSieve(max);
 
     expect(result).toEqual([
       false,

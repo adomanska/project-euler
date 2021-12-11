@@ -5,10 +5,10 @@ interface Candidate {
   a: number[];
 }
 
-export const range = (start: number, stop: number) => Array.from(new Array(stop - start + 1).keys())
+const range = (start: number, stop: number) => Array.from(new Array(stop - start + 1).keys())
   .map((value) => value + start);
 
-export const eratostenesSieve = (max: number) => {
+export const eratosthenesSieve = (max: number) => {
   const result = new Array(max + 1);
   result.fill(true);
   result[0] = false;
@@ -36,7 +36,7 @@ const filterCandidates = (candidates: Candidate[], n: number, primes: boolean[])
   .filter(({ a }) => a.length > 0);
 
 export const solve = (max: number) => {
-  const isPrime = eratostenesSieve(2 * max * max + max);
+  const isPrime = eratosthenesSieve(2 * max * max + max);
 
   let candidates = isPrime
     .slice(0, max + 1)
@@ -46,12 +46,12 @@ export const solve = (max: number) => {
         a: range(-(max - 1), max - 1),
       }) : undefined))
     .filter(notUndefined);
-  let newCandiates = candidates;
+  let newCandidates = candidates;
   let n = 1;
 
-  while (newCandiates.length) {
-    candidates = newCandiates;
-    newCandiates = filterCandidates(candidates, n, isPrime);
+  while (newCandidates.length) {
+    candidates = newCandidates;
+    newCandidates = filterCandidates(candidates, n, isPrime);
     n += 1;
   }
 
