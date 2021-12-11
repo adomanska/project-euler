@@ -43,7 +43,7 @@ export const solve = (max: number) => {
     .map((value, index) => (
       value ? ({
         b: index,
-        a: range(-999, 999),
+        a: range(-(max - 1), max - 1),
       }) : undefined))
     .filter(notUndefined);
   let newCandiates = candidates;

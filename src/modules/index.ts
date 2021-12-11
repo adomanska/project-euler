@@ -7,6 +7,7 @@ import nonAbundantSums from './non-abundant-sums';
 import lexicographicPermutations from './lexicographic-permutations';
 import nDigitFibonacciNumber from './n-digit-fibonacci-number';
 import reciprocalCycle from './reciprocal-cycle';
+import quadraticPrimes from './quadratic-primes';
 
 type Solver = (rawData: string[]) => string;
 
@@ -20,6 +21,7 @@ const config: Record<string, Solver> = {
   'lexicographic-permutations': lexicographicPermutations,
   'n-digit-fibonacci-number': nDigitFibonacciNumber,
   'reciprocal-cycle': reciprocalCycle,
+  'quadratic-primes': quadraticPrimes,
 };
 
 export default config;
