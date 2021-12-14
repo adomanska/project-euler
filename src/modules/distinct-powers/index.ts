@@ -1,15 +1,17 @@
 import parseData from '../../common/parse-single-number';
 
+const range = (start: number, stop: number) => Array.from(new Array(stop - start + 1).keys())
+  .map((value) => value + start);
+
 export const solve = (max: number) => {
-  let duplicatesCount = 0;
+  const values = range(2, max);
 
-  for (let index = 2; index <= max; index += 1) {
-    for (let power = 2; index ** power <= max; power += 1) {
-      duplicatesCount += (Math.floor(max / power) - 1);
-    }
-  }
+  const results = values.reduce(
+    (powers, value) => powers.concat(values.map((power) => value ** power)),
+    new Array<number>(),
+  );
 
-  return (max - 1) ** 2 - duplicatesCount;
+  return new Set(results).size;
 };
 
 const solveProblem = (rawData: string[]) => solve(parseData(rawData)).toString();

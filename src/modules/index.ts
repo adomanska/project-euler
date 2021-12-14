@@ -9,6 +9,7 @@ import nDigitFibonacciNumber from './n-digit-fibonacci-number';
 import reciprocalCycle from './reciprocal-cycle';
 import quadraticPrimes from './quadratic-primes';
 import numberSpiralDiagonals from './number-spiral-diagonals';
+import distinctPowers from './distinct-powers';
 
 type Solver = (rawData: string[]) => string;
 
@@ -24,6 +25,7 @@ const config: Record<string, Solver> = {
   'reciprocal-cycle': reciprocalCycle,
   'quadratic-primes': quadraticPrimes,
   'number-spiral-diagonals': numberSpiralDiagonals,
+  'distinct-powers': distinctPowers,
 };
 
 export default config;
