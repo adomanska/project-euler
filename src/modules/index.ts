@@ -8,6 +8,7 @@ import lexicographicPermutations from './lexicographic-permutations';
 import nDigitFibonacciNumber from './n-digit-fibonacci-number';
 import reciprocalCycle from './reciprocal-cycle';
 import quadraticPrimes from './quadratic-primes';
+import numberSpiralDiagonals from './number-spiral-diagonals';
 
 type Solver = (rawData: string[]) => string;
 
@@ -22,6 +23,7 @@ const config: Record<string, Solver> = {
   'n-digit-fibonacci-number': nDigitFibonacciNumber,
   'reciprocal-cycle': reciprocalCycle,
   'quadratic-primes': quadraticPrimes,
+  'number-spiral-diagonals': numberSpiralDiagonals,
 };
 
 export default config;
