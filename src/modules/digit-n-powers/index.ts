@@ -1,7 +1,5 @@
 import parseData from '../../common/parse-single-number';
-
-const range = (start: number, stop: number) => Array.from(new Array(stop - start + 1).keys())
-  .map((value) => value + start);
+import range from '../../common/range';
 
 const digitPowersSum = (power: number) => (value: number) => value
   .toString()
