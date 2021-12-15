@@ -10,6 +10,7 @@ import reciprocalCycle from './reciprocal-cycle';
 import quadraticPrimes from './quadratic-primes';
 import numberSpiralDiagonals from './number-spiral-diagonals';
 import distinctPowers from './distinct-powers';
+import digitNPowers from './digit-n-powers';
 
 type Solver = (rawData: string[]) => string;
 
@@ -26,6 +27,7 @@ const config: Record<string, Solver> = {
   'quadratic-primes': quadraticPrimes,
   'number-spiral-diagonals': numberSpiralDiagonals,
   'distinct-powers': distinctPowers,
+  'digit-n-powers': digitNPowers,
 };
 
 export default config;
