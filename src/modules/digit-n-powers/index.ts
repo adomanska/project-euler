@@ -1,6 +1,8 @@
 import parseData from '../../common/parse-single-number';
 import range from '../../common/range';
 
+const sum = (acc: number, cur: number) => acc + cur;
+
 const digitPowersSum = (power: number) => (value: number) => value
   .toString()
   .split('')
@@ -19,9 +21,9 @@ const solveRec = (
   }
 
   if (depth <= power) {
-    for (let newDigit = 0; newDigit < 10; newDigit += 1) {
-      total += solveRec(newNumber, newSum, newDigit, depth + 1, power);
-    }
+    total += range(0, 9)
+      .map((nextDigit) => solveRec(newNumber, newSum, nextDigit, depth + 1, power))
+      .reduce(sum);
   }
 
   return total;
@@ -33,11 +35,12 @@ const solveNaive = (power: number) => {
 
   return values
     .filter((value) => value === getPowersSum(value))
-    .reduce((acc, cur) => acc + cur);
+    .reduce(sum);
 };
 
 export const solve = (power: number) => range(0, 9)
-  .reduce((acc, lastDigit) => acc + solveRec(0, 0, lastDigit, 0, power), 0);
+  .map((lastDigit) => solveRec(0, 0, lastDigit, 0, power))
+  .reduce(sum);
 
 const solveProblem = (rawData: string[]) => solve(parseData(rawData)).toString();
 
