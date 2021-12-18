@@ -1,4 +1,6 @@
-export const isPandgitalCandidate = (value: number) => {
+import range from '../../common/range';
+
+export const isPandigitalCandidate = (value: number) => {
   const valueAsString = value.toString();
   const initialUsedDigits: Record<string, boolean> = {};
 
@@ -27,33 +29,40 @@ export const isPandigitalProduct = (multiplicant: number, multiplier: number, pr
 const searchForPandigitalProducts = (
   pandigitalProducts: Set<number>,
   product: number,
-  minMultiplicant: number,
-  maxMultiplicant: number,
+  multiplicants: number[],
 ) => {
-  if (isPandgitalCandidate(product)) {
-    const multiplicant = minMultiplicant;
+  if (isPandigitalCandidate(product)) {
+    let index = 0;
 
-    while (multiplicant <= maxMultiplicant) {
+    while (index <= multiplicants.length) {
+      const multiplicant = multiplicants[index];
+
       if (product % multiplicant === 0) {
         if (isPandigitalProduct(multiplicant, product / multiplicant, product)) {
           pandigitalProducts.add(product);
           break;
         }
       }
+
+      index += 1;
     }
   }
 };
 
 const solve = () => {
+  // Costants determined by checking ranges of product
   const min = 1476;
   const mid = 2690;
   const max = 9876;
+
   const pandigitalProducts = new Set<number>();
+  const twoDigitMultiplcants = range(12, 98).filter(isPandigitalCandidate);
+  const multiplicants = [1, 2, 3, 4, 5, 6, 7, 8, 9, ...twoDigitMultiplcants];
 
   // Check products matching pattern:
   // 2-digit x 3-digit = 4-digit
   for (let product = min; product < mid; product += 1) {
-    searchForPandigitalProducts(pandigitalProducts, product, 12, 98);
+    searchForPandigitalProducts(pandigitalProducts, product, twoDigitMultiplcants);
   }
 
   // Check products matching pattern:
@@ -61,7 +70,7 @@ const solve = () => {
   // or
   // 2-digit x 3-digit = 4-digit
   for (let product = mid; product <= max; product += 1) {
-    searchForPandigitalProducts(pandigitalProducts, product, 2, 98);
+    searchForPandigitalProducts(pandigitalProducts, product, multiplicants);
   }
 
   return Array.from(pandigitalProducts).reduce((acc, cur) => acc + cur);

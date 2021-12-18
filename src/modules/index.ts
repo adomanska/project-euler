@@ -12,6 +12,7 @@ import numberSpiralDiagonals from './number-spiral-diagonals';
 import distinctPowers from './distinct-powers';
 import digitNPowers from './digit-n-powers';
 import coinSums from './coin-sums';
+import pandigitalProducts from './pandigital-products';
 
 type Solver = (rawData: string[]) => string;
 
@@ -30,6 +31,7 @@ const config: Record<string, Solver> = {
   'distinct-powers': distinctPowers,
   'digit-n-powers': digitNPowers,
   'coin-sums': coinSums,
+  'pandigital-products': pandigitalProducts,
 };
 
 export default config;
