@@ -34,7 +34,7 @@ const searchForPandigitalProducts = (
   if (isPandigitalCandidate(product)) {
     let index = 0;
 
-    while (index <= multiplicants.length) {
+    while (index < multiplicants.length) {
       const multiplicant = multiplicants[index];
 
       if (product % multiplicant === 0) {
@@ -56,13 +56,13 @@ const solve = () => {
   const max = 9876;
 
   const pandigitalProducts = new Set<number>();
-  const twoDigitMultiplcants = range(12, 98).filter(isPandigitalCandidate);
-  const multiplicants = [1, 2, 3, 4, 5, 6, 7, 8, 9, ...twoDigitMultiplcants];
+  const twoDigitMultiplicants = range(12, 98).filter(isPandigitalCandidate);
+  const multiplicants = [1, 2, 3, 4, 5, 6, 7, 8, 9, ...twoDigitMultiplicants];
 
   // Check products matching pattern:
   // 2-digit x 3-digit = 4-digit
   for (let product = min; product < mid; product += 1) {
-    searchForPandigitalProducts(pandigitalProducts, product, twoDigitMultiplcants);
+    searchForPandigitalProducts(pandigitalProducts, product, twoDigitMultiplicants);
   }
 
   // Check products matching pattern:
