@@ -15,22 +15,18 @@ export const combinations = (start: number, stop: number, count: number): number
 const isDigitCancellingFraction = (x: number, y: number, z: number) => {
   if (y !== 0 && z !== 0) {
     if (x !== 0 && (10 * x + z) / (10 * y + z) === x / y) {
-      console.log(`${(10 * x + z)} / ${(10 * y + z)}`);
       return true;
     }
 
     if (x !== 0 && (10 * x + z) / (10 * z + y) === x / y) {
-      console.log(`${(10 * x + z)} / ${(10 * z + y)}`);
       return true;
     }
 
     if ((10 * z + x) / (10 * y + z) === x / y) {
-      console.log(`${(10 * z + x)} / ${(10 * y + z)}`);
       return true;
     }
 
     if ((10 * z + x) / (10 * z + y) === x / y) {
-      console.log(`${(10 * z + x)} / ${(10 * z + y)}`);
       return true;
     }
   }
