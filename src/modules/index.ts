@@ -13,6 +13,7 @@ import distinctPowers from './distinct-powers';
 import digitNPowers from './digit-n-powers';
 import coinSums from './coin-sums';
 import pandigitalProducts from './pandigital-products';
+import digitCancellingFractions from './digit-cancelling-fractions';
 
 type Solver = (rawData: string[]) => string;
 
@@ -32,6 +33,7 @@ const config: Record<string, Solver> = {
   'digit-n-powers': digitNPowers,
   'coin-sums': coinSums,
   'pandigital-products': pandigitalProducts,
+  'digit-cancelling-fractions': digitCancellingFractions,
 };
 
 export default config;
